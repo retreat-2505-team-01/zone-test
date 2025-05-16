@@ -1,0 +1,180 @@
+{
+  "info": {
+    "name": "Zombifut\u00e1r API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Create Order",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"sender\": \"Zombi B\\u00fcf\\u00e9\",\n  \"recipient\": \"Dr. Frankenstein\",\n  \"description\": \"K\\u00eds\\u00e9rleti sz\\u00e9rum doboz\",\n  \"timestamp\": \"2025-05-16T12:30:00Z\",\n  \"orderId\": \"ORDER123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/orders",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "orders"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get All Orders",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/orders",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "orders"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Order Status",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/orders/ORDER123/status",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "orders",
+            "ORDER123",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Update Order Status",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"status\": \"Chewed\",\n  \"comment\": \"Zombi kicsit megcs\\u00f3cs\\u00e1lta\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/orders/ORDER123/status",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "orders",
+            "ORDER123",
+            "status"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Assign Zombie",
+      "request": {
+        "method": "POST",
+        "url": {
+          "raw": "http://localhost:8080/orders/ORDER123/assign-zombie",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "orders",
+            "ORDER123",
+            "assign-zombie"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Order Events",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:8080/orders/ORDER123/events",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "orders",
+            "ORDER123",
+            "events"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Risk Analysis",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"orderId\": \"ORDER123\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:8080/risk-analysis",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "risk-analysis"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Zombie Handbook",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Accept",
+            "value": "text/plain"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:8080/zombie-handbook",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "zombie-handbook"
+          ]
+        }
+      }
+    }
+  ]
+}
